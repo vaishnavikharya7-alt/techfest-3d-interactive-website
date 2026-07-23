@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Techfest 2025 — The Intelligence Awakening</title>
+<meta name="description" content="Techfest 2025 — A futuristic AI-powered technology festival. 48 hours, 120+ events, 50,000+ innovators. The Intelligence Awakening begins." />
+<meta name="keywords" content="techfest, AI, cyberpunk, future tech, hackathon, robotics, innovation, 2025" />
+<meta name="author" content="Techfest" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Techfest 2025 — The Intelligence Awakening" />
+<meta property="og:description" content="48 hours. 120+ events. 50,000+ innovators. The future lands this December." />
+<meta property="og:type" content="website" />
+
+<!-- Favicon (inline SVG) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,5 95,75 5,75' fill='none' stroke='%2306B6D4' stroke-width='6'/%3E%3Cpolygon points='50,30 75,70 25,70' fill='%232563EB'/%3E%3C/svg%3E" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="style.css">
+
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Techfest 2025 — The Intelligence Awakening",
+  "startDate": "2025-12-12",
+  "endDate": "2025-12-14",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Techfest Arena",
+    "address": "Innovation District, San Francisco"
+  },
+  "description": "A futuristic AI-powered technology festival featuring 120+ events, hackathons, robotics competitions, workshops and visionary speakers.",
+  "organizer": { "@type": "Organization", "name": "Techfest" }
+}
+</script>
+</head>
+<body>
+
+<!-- =================== LOADING SCREEN =================== -->
+<div class="loader" id="loader" role="status" aria-live="polite" aria-label="Loading Techfest experience">
+  <div class="loader-inner">
+    <div class="loader-ring"></div>
+    <div class="loader-ring loader-ring--2"></div>
+    <div class="loader-ring loader-ring--3"></div>
+    <div class="loader-mark">
+      <svg viewBox="0 0 100 100" width="80" height="80">
+        <polygon points="50,5 95,75 5,75" fill="none" stroke="url(#lg1)" stroke-width="2"/>
+        <polygon points="50,30 75,70 25,70" fill="url(#lg2)"/>
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#06B6D4"/>
+            <stop offset="1" stop-color="#7C3AED"/>
+          </linearGradient>
+          <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2563EB"/>
+            <stop offset="1" stop-color="#06B6D4"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="loader-text">
+      <span class="loader-title">TECHFEST</span>
+      <span class="loader-sub" id="loaderSub">INITIALIZING SYSTEM</span>
+    </div>
+    <div class="loader-bar"><div class="loader-bar-fill" id="loaderBar"></div></div>
+    <div class="loader-pct" id="loaderPct">0%</div>
+  </div>
+</div>
+
+<!-- =================== SCROLL PROGRESS =================== -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- =================== CUSTOM CURSOR =================== -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- =================== NAVBAR =================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Techfest home">
+      <svg viewBox="0 0 100 100" width="34" height="34" aria-hidden="true">
+        <polygon points="50,5 95,75 5,75" fill="none" stroke="url(#nlg)" stroke-width="6"/>
+        <polygon points="50,30 75,70 25,70" fill="url(#nlg2)"/>
+        <defs>
+          <linearGradient id="nlg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06B6D4"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+          <linearGradient id="nlg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/></linearGradient>
+        </defs>
+      </svg>
+      <span class="nav-logo-text">TECHFEST<em>'25</em></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#competitions">Compete</a></li>
+      <li><a href="#workshops">Workshops</a></li>
+      <li><a href="#speakers">Speakers</a></li>
+      <li><a href="#timeline">Schedule</a></li>
+      <li><a href="#sponsors">Partners</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" data-cursor="hover">Register</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- =================== HERO =================== -->
+<header class="hero" id="hero">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
+  <!-- Holographic HUD overlay -->
+  <div class="hud" aria-hidden="true">
+    <div class="hud-corner hud-tl">
+      <div class="hud-line"></div>
+      <div class="hud-label">SYS://TECHFEST.AI</div>
+      <div class="hud-val">v2.5.0 — NEURAL CORE ONLINE</div>
+    </div>
+    <div class="hud-corner hud-tr">
+      <div class="hud-line"></div>
+      <div class="hud-label">COORD</div>
+      <div class="hud-val">37.7749°N 122.4194°W</div>
+    </div>
+    <div class="hud-corner hud-bl">
+      <div class="hud-line"></div>
+      <div class="hud-label">SECTOR</div>
+      <div class="hud-val">07 — INNOVATION DISTRICT</div>
+    </div>
+    <div class="hud-corner hud-br">
+      <div class="hud-line"></div>
+      <div class="hud-label">STATUS</div>
+      <div class="hud-val hud-pulse">● BROADCASTING SIGNAL</div>
+    </div>
+  </div>
+
+  <!-- Hero content -->
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="hero-tag-dot"></span>
+      <span>DEC 12 — 14 · 2025 · SAN FRANCISCO</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="hero-title-line" data-line="1">The Intelligence</span>
+      <span class="hero-title-line gradient-text" data-line="2">Awakening</span>
+    </h1>
+    <p class="hero-sub">A three-day convergence of AI, robotics, quantum computing, and human imagination. Where the machines begin to dream — and we dream with them.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" data-cursor="hover">
+        <span>Reserve Your Pass</span>
+        <svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8h12M8 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </button>
+      <button class="btn btn-ghost" data-cursor="hover">
+        <span class="btn-icon-play">▶</span>
+        <span>Watch Trailer</span>
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-num" data-count="50000">0</span><span class="hero-stat-label">Innovators</span></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><span class="hero-stat-num" data-count="120">0</span><span class="hero-stat-label">Events</span></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><span class="hero-stat-num" data-count="48">0</span><span class="hero-stat-label">Hours</span></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><span class="hero-stat-num" data-count="30">0</span><span class="hero-stat-label">Countries</span></div>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="scroll-hint-line"></div>
+  </div>
+</header>
+
+<!-- =================== ABOUT =================== -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">01 — ABOUT</span>
+      <h2 class="section-title">Where the future <span class="gradient-text">writes itself</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="about-lead">Techfest 2025 isn't a conference. It's a signal broadcast from a decade ahead — decoded by the people bold enough to listen.</p>
+        <p>For three days, the Innovation District becomes a living laboratory: quantum processors humming beneath holographic skies, neural networks negotiating with artists, autonomous machines learning to dance. This is where intent meets invention — where the boundary between human creativity and machine intelligence doesn't blur, it dissolves.</p>
+        <p>Curated by MIT, Stanford AI Lab, DeepMind and 200+ researchers across 30 countries. Open to anyone who refuses to wait for the future.</p>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat-card glass" data-cursor="hover">
+          <div class="about-stat-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L2 7v6c0 5.5 4 9.5 10 11 6-1.5 10-5.5 10-11V7l-10-5z"/></svg>
+          </div>
+          <div class="about-stat-num counter" data-count="200">0</div>
+          <div class="about-stat-label">Researchers</div>
+        </div>
+        <div class="about-stat-card glass" data-cursor="hover">
+          <div class="about-stat-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+          </div>
+          <div class="about-stat-num counter" data-count="30">0</div>
+          <div class="about-stat-label">Countries</div>
+        </div>
+        <div class="about-stat-card glass" data-cursor="hover">
+          <div class="about-stat-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+          </div>
+          <div class="about-stat-num"><span class="counter" data-count="2.5">0</span>M+</div>
+          <div class="about-stat-label">Prize Pool</div>
+        </div>
+        <div class="about-stat-card glass" data-cursor="hover">
+          <div class="about-stat-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg>
+          </div>
+          <div class="about-stat-num counter" data-count="500">0</div>
+          <div class="about-stat-label">Projects Shipped</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== EVENTS =================== -->
+<section class="section events" id="events">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-tag">02 — EVENTS</span>
+      <h2 class="section-title">Twelve tracks. <span class="gradient-text">One frequency.</span></h2>
+      <p class="section-sub">From neural architecture surgeries to bio-robotic choreography — every track is engineered to short-circuit your assumptions.</p>
+    </div>
+    <div class="events-grid" id="eventsGrid">
+      <!-- Events injected via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- =================== COMPETITIONS =================== -->
+<section class="section competitions" id="competitions">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">03 — COMPETE</span>
+      <h2 class="section-title">Prove it. <span class="gradient-text">Win it.</span></h2>
+    </div>
+    <div class="comp-grid" id="compGrid">
+      <!-- Competitions injected via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- =================== WORKSHOPS =================== -->
+<section class="section workshops" id="workshops">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-tag">04 — WORKSHOPS</span>
+      <h2 class="section-title">Hands on the <span class="gradient-text">future.</span></h2>
+      <p class="section-sub">Small groups. Elite mentors. Take something home that didn't exist when you arrived.</p>
+    </div>
+    <div class="workshop-list" id="workshopList">
+      <!-- Workshops injected via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- =================== SPEAKERS =================== -->
+<section class="section speakers" id="speakers">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">05 — VOICES</span>
+      <h2 class="section-title">The minds <span class="gradient-text">mapping tomorrow.</span></h2>
+    </div>
+    <div class="speakers-grid" id="speakersGrid">
+      <!-- Speakers injected via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- =================== TIMELINE =================== -->
+<section class="section timeline" id="timeline">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-tag">06 — SCHEDULE</span>
+      <h2 class="section-title">72 hours, <span class="gradient-text">compressed.</span></h2>
+    </div>
+    <div class="timeline-wrap">
+      <div class="timeline-line"></div>
+      <div class="timeline-track" id="timelineTrack">
+        <!-- Timeline items injected via JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SPONSORS =================== -->
+<section class="section sponsors" id="sponsors">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-tag">07 — PARTNERS</span>
+      <h2 class="section-title">Powered by <span class="gradient-text">pioneers.</span></h2>
+    </div>
+    <div class="sponsors-marquee" id="sponsorsMarquee">
+      <!-- Sponsors injected via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- =================== GALLERY =================== -->
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">08 — ARCHIVE</span>
+      <h2 class="section-title">Echoes from <span class="gradient-text">previous iterations.</span></h2>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Gallery items injected via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- =================== CONTACT =================== -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="section-tag">09 — CONTACT</span>
+        <h2 class="section-title">Join the <span class="gradient-text">signal.</span></h2>
+        <p class="contact-lead">Register your team, sponsor a track, or just say hello. The signal is open.</p>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <span class="contact-info-label">VENUE</span>
+            <span class="contact-info-val">Innovation District · San Francisco</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">EMAIL</span>
+            <span class="contact-info-val">signal@techfest.ai</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">FREQUENCY</span>
+            <span class="contact-info-val">Live · 24/7 broadcast</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form glass" id="contactForm" novalidate>
+        <div class="form-row">
+          <label class="form-label">Name
+            <input class="form-input" type="text" name="name" required autocomplete="name" />
+          </label>
+          <label class="form-label">Email
+            <input class="form-input" type="email" name="email" required autocomplete="email" />
+          </label>
+        </div>
+        <label class="form-label">Interest
+          <select class="form-input" name="interest">
+            <option>Attendee</option>
+            <option>Competitor</option>
+            <option>Speaker</option>
+            <option>Sponsor</option>
+            <option>Volunteer</option>
+          </select>
+        </label>
+        <label class="form-label">Message
+          <textarea class="form-input form-textarea" name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary btn-block" data-cursor="hover">
+          <span>Transmit Signal</span>
+          <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </button>
+        <div class="form-status" id="formStatus" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg viewBox="0 0 100 100" width="48" height="48" aria-hidden="true">
+          <polygon points="50,5 95,75 5,75" fill="none" stroke="url(#fg)" stroke-width="6"/>
+          <polygon points="50,30 75,70 25,70" fill="url(#fg2)"/>
+          <defs>
+            <linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06B6D4"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+            <linearGradient id="fg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/></linearGradient>
+          </defs>
+        </svg>
+        <div>
+          <div class="footer-brand-name">TECHFEST</div>
+          <div class="footer-brand-sub">The Intelligence Awakening</div>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Festival</div>
+          <a href="#about">About</a>
+          <a href="#events">Events</a>
+          <a href="#timeline">Schedule</a>
+          <a href="#gallery">Gallery</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Participate</div>
+          <a href="#competitions">Compete</a>
+          <a href="#workshops">Learn</a>
+          <a href="#speakers">Speak</a>
+          <a href="#sponsors">Sponsor</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Connect</div>
+          <a href="#" data-cursor="hover">Discord</a>
+          <a href="#" data-cursor="hover">Telegram</a>
+          <a href="#" data-cursor="hover">X / Twitter</a>
+          <a href="#" data-cursor="hover">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Techfest. Built in the open.</span>
+      <span class="footer-status"><span class="footer-status-dot"></span>All systems nominal</span>
+    </div>
+  </div>
+</footer>
+
+<!-- =================== THREE.JS via importmap =================== -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<!-- =================== GSAP & ScrollTrigger =================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<!-- =================== MAIN SCRIPT =================== -->
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
